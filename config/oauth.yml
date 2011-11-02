@@ -1,0 +1,5 @@
+access_token: '/oauth/access_token'
+authorization: '/oauth/authorize'
+user_info: '/user'
+logout: '/oauth/logout'
+callback: '/oauth/callback'

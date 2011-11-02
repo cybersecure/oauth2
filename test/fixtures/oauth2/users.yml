@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  username: MyString
+  login_token: MyString
+  auth_token: MyString
+  access_token: MyString
+  expires_in: 1
+  refresh_token: MyString
+
+two:
+  username: MyString
+  login_token: MyString
+  auth_token: MyString
+  access_token: MyString
+  expires_in: 1
+  refresh_token: MyString

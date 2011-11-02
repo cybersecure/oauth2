@@ -1,0 +1,4 @@
+client_id: 'abc123'
+client_secret: 'abc123'
+client_url: 'http://localhost:3099'
+server_url: 'http://localhost:3000'
