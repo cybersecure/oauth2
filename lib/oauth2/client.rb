@@ -45,7 +45,9 @@ module Oauth2
 		end
 
 		def self.logout_from_oauth(user)
-			uri = "http://gatekeeper.dev/oauth/logout"
+			response = self.post(self.url_for('logout'),{:access_token => user.access_token})
+			response_hash = ActiveSupport::JSON.decode(response)
+			response_hash['logout'] ? true : false
 		end
 
 		def self.get_user(access_token)

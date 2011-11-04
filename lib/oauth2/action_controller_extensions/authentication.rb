@@ -18,7 +18,7 @@ module Oauth2
 			def login_required
 				unless logged_in?
 					store_target_location
-					redirect_to login_url
+					redirect_to oauth2.login_url
 				end
 			end
 
@@ -30,6 +30,7 @@ module Oauth2
 			def store_target_location
 				session[:return_to] = request.url
 			end
+			
 		end
 	end
 end

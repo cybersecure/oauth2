@@ -35,5 +35,14 @@ Rake::TestTask.new(:test) do |t|
   t.verbose = false
 end
 
+desc 'Print out all defined routes in match order, with names. Target specific controller with CONTROLLER=x.'
+task :routes do
+  Rails.application.reload_routes!
+	all_routes = Oauth2::Engine.routes.routes
+
+	require 'rails/engine/route_inspector'
+	inspector = Rails::Engine::RouteInspector.new
+	puts inspector.format(all_routes, ENV['CONTROLLER']).join "\n"
+end
 
 task :default => :test
