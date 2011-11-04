@@ -4,8 +4,8 @@ module Oauth2
 			
 			private 
 			def current_user
-				if cookies[:auth_token]
-					@current_user ||= User.find_by_login_token!(cookies[:auth_token])
+				if cookies[:login_token]
+					@current_user ||= User.find_by_login_token(cookies[:login_token])
 				else
 					nil
 				end

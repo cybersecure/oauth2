@@ -5,7 +5,7 @@ module Oauth2
 		
 		@@config = YAML.load_file("#{Rails.root}/config/oauth.yml")
 		@@paths = YAML.load_file("#{Engine.root}/config/oauth.yml")
-		@@redirect_url = "#{@@config['client_url']}#{@@paths['callback']}"
+		@@redirect_url = "#{@@config['client_url']}/oauth2/callback"
 
 		def self.authorization_url
 			"#{self.url_for('authorization')}?client_id=#{@@config['client_id']}&redirect_uri=#{@@redirect_url}"
@@ -24,7 +24,6 @@ module Oauth2
 					:code => code
 				}
 				response = self.post(self.url_for('access_token'),post_params)
-				puts response
 				response_hash = ActiveSupport::JSON.decode(response)
 				access_token ||= response_hash['access_token']
 				if access_token
