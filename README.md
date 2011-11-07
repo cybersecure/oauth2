@@ -9,18 +9,18 @@ Installation
 
 Add the following source to your Gemfile
 
-    gem 'oauth2', :git => 'git://github.com:jaischeema/oauth2.git'
+	gem 'oauth2', :git => 'git://github.com:jaischeema/oauth2.git'
 
 And run 
 
-    bundle install
-		rails g oauth:install
+	bundle install
+	rails g oauth:install
 
 This should place everything in the proper places and add the routes as well.
 
 Just make sure, before starting the server, run the following command.
 
-		rake db:migrate
+	rake db:migrate
 
 Usage
 -----
